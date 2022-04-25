@@ -8,3 +8,15 @@
 1.- Add a correct compiler version for 2_Owner.sol
 2.- Add a compiler version different from 0.4.0 and 0.5.2 but compatible with the pragma of 1_Owner.sol.
 3.- Add an override for 3_Owner.sol to compile it with a 0.6.0 version.
+
+# Install dependencies
+
+`$ npm install`
+
+# Compile
+
+`$ npx hardhat compile`
+
+# Compile with verbosity 
+
+`$ npx hardhat compile --verbose`
