@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0
 
-pragma solidity >=0.4.0 <0.5.2;
+pragma solidity >=0.4.11 <0.5.2;
 
 /**
  * @title Owner
