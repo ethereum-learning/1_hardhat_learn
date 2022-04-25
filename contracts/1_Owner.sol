@@ -20,16 +20,15 @@ contract Owner {
         // This used to consume all gas in old EVM versions, but not anymore.
         // It is often a good idea to use 'require' to check if functions are called correctly.
         // As a second argument, you can also provide an explanation about what went wrong.
-        require(msg.sender == owner, "Caller is not owner");
+        require(msg.sender == owner);
         _;
     }
     
     /**
      * @dev Set contract deployer as owner
      */
-    constructor() {
-        owner = msg.sender; // 'msg.sender' is sender of current call, contract deployer for a constructor
-        emit OwnerSet(address(0), owner);
+    function Owner () public {
+        owner = msg.sender;
     }
 
     /**
@@ -37,7 +36,6 @@ contract Owner {
      * @param newOwner address of new owner
      */
     function changeOwner(address newOwner) public isOwner {
-        emit OwnerSet(owner, newOwner);
         owner = newOwner;
     }
 
@@ -45,7 +43,7 @@ contract Owner {
      * @dev Return owner address 
      * @return address of owner
      */
-    function getOwner() external view returns (address) {
+    function getOwner() external  returns (address) {
         return owner;
     }
 }
